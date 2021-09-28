@@ -13,3 +13,5 @@ my_list.all? { |e| e > 5 }
 
 my_list.any? { |e| e == 2 }
 my_list.any? { |e| e == 5 }
+
+my_list.filter { |e| e.even? }

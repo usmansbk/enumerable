@@ -12,4 +12,15 @@ class MyEnumerable
     end
     false
   end
+
+  def filter
+    filtered = []
+    @list.each do |num|
+      if (yield num)
+        filtered.push(num)
+      end
+    end
+    
+    filtered
+  end
 end
