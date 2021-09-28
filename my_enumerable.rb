@@ -16,11 +16,8 @@ class MyEnumerable
   def filter
     filtered = []
     @list.each do |num|
-      if (yield num)
-        filtered.push(num)
-      end
+      filtered.push(num) if yield num
     end
-    
     filtered
   end
 end
