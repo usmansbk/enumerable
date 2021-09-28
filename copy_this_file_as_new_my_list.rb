@@ -1,8 +1,9 @@
 require_relative 'my_enumerable'
 
-class MyList < MyEnumerable
+class MyList 
+  include MyEnumerable
+
   def initialize(*list)
-    super
     @list = list
   end
 end
