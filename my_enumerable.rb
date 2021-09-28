@@ -1,23 +1,17 @@
 class MyEnumerable
   def all?
-    @list.each do |num|
-      return false unless yield num
-    end
+    @list.each { |num| return false unless yield num }
     true
   end
 
   def any?
-    @list.each do |num|
-      return true if yield num
-    end
+    @list.each { |num| return true if yield num }
     false
   end
 
   def filter
     filtered = []
-    @list.each do |num|
-      filtered.push(num) if yield num
-    end
+    @list.each { |num| filtered.push(num) if yield num }
     filtered
   end
 end
